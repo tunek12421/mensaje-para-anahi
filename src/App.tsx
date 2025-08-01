@@ -100,7 +100,7 @@ export default function App() {
   }, [showMessage, currentLanguage]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center p-3 xs:p-4 sm:p-6 md:p-8 overflow-x-hidden relative">
+    <div ref={containerRef} className="w-screen h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center overflow-hidden relative">
       {/* Estrellas cinematográficas con efectos profesionales */}
       <div className="absolute inset-0 pointer-events-none">
         {stars.map((star) => (
@@ -230,12 +230,12 @@ export default function App() {
         ))}
       </div>
 
-      <div className="w-full max-w-lg xs:max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl z-10 px-3 xs:px-4 sm:px-6">
+      <div className="w-full h-full max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl z-10 px-4 py-4 flex flex-col justify-center">
         {!showMessage ? (
           <div className="text-center">
             {/* Mi Luna Mi Sol */}
-            <div className="mb-6 xs:mb-8 sm:mb-10 text-center">
-              <div className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-light text-white opacity-0 animate-letter-appear mb-4"
+            <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-center">
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white opacity-0 animate-letter-appear mb-3 sm:mb-4"
                    style={{
                      animationDelay: '0.5s',
                      animationFillMode: 'forwards',
@@ -244,7 +244,7 @@ export default function App() {
                 Mi luna 🌙
               </div>
               
-              <div className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-light text-white opacity-0 animate-letter-appear"
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white opacity-0 animate-letter-appear"
                    style={{
                      animationDelay: '1s',
                      animationFillMode: 'forwards',
@@ -421,10 +421,7 @@ export default function App() {
                       <div className="mt-4 xs:mt-6 sm:mt-8 pt-3 xs:pt-4 sm:pt-6 border-t border-white/20 relative z-10">
                         <p className="text-center text-white text-xs xs:text-sm bg-black/60 rounded-lg px-2 xs:px-3 sm:px-4 py-2 xs:py-3 border border-white/20"
                            style={{ textShadow: '0 0 8px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.8)' }}>
-                          Con amor, cruzando la distancia 
-                          <span className="block text-xs mt-1 opacity-80 text-gray-300">
-                            Con amor desde Cochabamba 💕
-                          </span>
+                          Con amor desde Cochabamba 💕
                         </p>
                       </div>
                     </div>
