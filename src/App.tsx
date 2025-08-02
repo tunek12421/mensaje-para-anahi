@@ -319,7 +319,7 @@ export default function App() {
               
               {/* Nombre revelado con efecto elegante responsivo */}
               {nameRevealed && (
-                <div className="absolute -top-12 xs:-top-14 sm:-top-16 md:-top-20 left-1/2 transform -translate-x-1/2 animate-float-name px-1 xs:px-2 z-50">
+                <div className="mb-4 xs:mb-6 sm:mb-8 text-center animate-float-name px-1 xs:px-2 z-50">
                   <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-white tracking-wide xs:tracking-widest opacity-90 text-center bg-black/80 backdrop-blur-md rounded-lg xs:rounded-xl px-2 xs:px-3 sm:px-4 py-1 xs:py-2 shadow-2xl border-2 border-white/50"
                        style={{ 
                          textShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 4px 8px rgba(0, 0, 0, 0.8)',
