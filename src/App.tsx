@@ -110,7 +110,7 @@ export default function App() {
   }, [showMessage, currentLanguage]);
 
   return (
-    <div ref={containerRef} className="w-screen h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center overflow-hidden relative">
+    <div ref={containerRef} className="w-screen min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center overflow-x-hidden overflow-y-auto relative">
       {/* Estrellas cinematográficas con efectos profesionales */}
       <div className="absolute inset-0 pointer-events-none">
         {stars.map((star) => (
