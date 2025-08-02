@@ -38,20 +38,30 @@ export default function App() {
 
   const nameLetters = "ANAHI".split('');
 
-  // Crear partículas románticas y estrellas
+  // Detectar si es móvil
+  const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+  };
+
+  // Crear partículas románticas y estrellas optimizado para móviles
   useEffect(() => {
     const newParticles = [];
     const newStars = [];
+    const mobile = isMobile();
+    
+    // Reducir partículas en móviles
+    const particleCount = mobile ? 15 : 40;
+    const starCount = mobile ? 10 : 30;
     
     // Partículas flotantes románticas
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < particleCount; i++) {
       const types: Array<'heart' | 'sparkle' | 'dot'> = ['heart', 'sparkle', 'dot'];
       newParticles.push({
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
         size: Math.random() * 4 + 1,
-        duration: Math.random() * 25 + 15,
+        duration: mobile ? Math.random() * 15 + 10 : Math.random() * 25 + 15,
         delay: Math.random() * 8,
         type: types[Math.floor(Math.random() * types.length)],
         opacity: Math.random() * 0.4 + 0.1,
@@ -59,7 +69,7 @@ export default function App() {
     }
     
     // Estrellas titilantes de fondo
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < starCount; i++) {
       newStars.push({
         id: i,
         x: Math.random() * 100,
@@ -113,14 +123,15 @@ export default function App() {
               left: `${star.x}%`,
               top: `${star.y}%`,
               animation: `twinkle 3s ${star.twinkleDelay}s infinite ease-in-out, depth-of-field 8s ease-in-out infinite`,
-              boxShadow: '0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4), 0 0 18px rgba(255, 255, 255, 0.2)',
-              filter: 'blur(0.5px)'
+              boxShadow: isMobile() ? '0 0 3px rgba(255, 255, 255, 0.5)' : '0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4), 0 0 18px rgba(255, 255, 255, 0.2)',
+              filter: isMobile() ? 'none' : 'blur(0.5px)',
+              willChange: 'transform, opacity'
             }}
           />
         ))}
         
-        {/* Corazones flotantes suaves */}
-        {[...Array(3)].map((_, i) => (
+        {/* Corazones flotantes suaves - reducidos en móviles */}
+        {[...Array(isMobile() ? 1 : 3)].map((_, i) => (
           <div
             key={`floating-heart-${i}`}
             className="absolute opacity-10 text-pink-200"
@@ -130,15 +141,16 @@ export default function App() {
               top: `${25 + i * 20}%`,
               animation: `romantic-drift ${25 + i * 5}s ease-in-out infinite`,
               animationDelay: `${i * 8}s`,
-              filter: 'drop-shadow(0 0 4px rgba(255, 182, 193, 0.3))'
+              filter: isMobile() ? 'none' : 'drop-shadow(0 0 4px rgba(255, 182, 193, 0.3))',
+              willChange: 'transform'
             }}
           >
             ♥
           </div>
         ))}
         
-        {/* Pétalos de rosa suaves */}
-        {[...Array(4)].map((_, i) => (
+        {/* Pétalos de rosa suaves - reducidos en móviles */}
+        {[...Array(isMobile() ? 2 : 4)].map((_, i) => (
           <div
             key={`petal-${i}`}
             className="absolute opacity-15"
@@ -151,7 +163,8 @@ export default function App() {
               borderRadius: '50% 10% 50% 10%',
               animation: `falling-petals ${20 + i * 5}s linear infinite`,
               animationDelay: `${i * 10}s`,
-              filter: 'blur(1px)'
+              filter: isMobile() ? 'none' : 'blur(1px)',
+              willChange: 'transform'
             }}
           />
         ))}
@@ -210,25 +223,28 @@ export default function App() {
         }}
       />
       
-      {/* Luces muy suaves */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(2)].map((_, i) => (
-          <div
-            key={`candle-light-${i}`}
-            className="absolute rounded-full opacity-8"
-            style={{
-              width: '40px',
-              height: '50px',
-              left: `${30 + i * 40}%`,
-              top: `${40 + i * 20}%`,
-              background: 'radial-gradient(ellipse, rgba(255, 228, 181, 0.3) 0%, transparent 70%)',
-              animation: `candle-flicker ${4 + i}s ease-in-out infinite`,
-              animationDelay: `${i * 6}s`,
-              filter: 'blur(12px)'
-            }}
-          />
-        ))}
-      </div>
+      {/* Luces muy suaves - deshabilitadas en móviles */}
+      {!isMobile() && (
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(2)].map((_, i) => (
+            <div
+              key={`candle-light-${i}`}
+              className="absolute rounded-full opacity-8"
+              style={{
+                width: '40px',
+                height: '50px',
+                left: `${30 + i * 40}%`,
+                top: `${40 + i * 20}%`,
+                background: 'radial-gradient(ellipse, rgba(255, 228, 181, 0.3) 0%, transparent 70%)',
+                animation: `candle-flicker ${4 + i}s ease-in-out infinite`,
+                animationDelay: `${i * 6}s`,
+                filter: 'blur(12px)',
+                willChange: 'transform, opacity'
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="w-full h-full max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl z-10 px-4 py-4 flex flex-col justify-center">
         {!showMessage ? (
@@ -295,9 +311,10 @@ export default function App() {
             {/* Card principal con efecto de cristal suave ultra responsivo */}
             <div className="relative bg-black/85 backdrop-blur-lg rounded-xl xs:rounded-2xl sm:rounded-3xl shadow-2xl p-3 xs:p-4 sm:p-6 md:p-8 lg:p-12 border-2 border-white/40 mx-1 xs:mx-2 sm:mx-0 z-20"
                  style={{
-                   transform: `perspective(1200px) rotateX(${mousePosition.y * 2}deg) rotateY(${mousePosition.x * 2}deg)`,
-                   transition: 'transform 0.1s ease-out',
-                   boxShadow: '0 25px 50px rgba(0, 0, 0, 0.8), 0 0 100px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                   transform: isMobile() ? 'none' : `perspective(1200px) rotateX(${mousePosition.y * 2}deg) rotateY(${mousePosition.x * 2}deg)`,
+                   transition: isMobile() ? 'none' : 'transform 0.1s ease-out',
+                   boxShadow: isMobile() ? '0 8px 25px rgba(0, 0, 0, 0.5)' : '0 25px 50px rgba(0, 0, 0, 0.8), 0 0 100px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+                   willChange: isMobile() ? 'auto' : 'transform'
                  }}>
               
               {/* Nombre revelado con efecto elegante responsivo */}
