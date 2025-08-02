@@ -255,7 +255,7 @@ export default function App() {
               <img 
                 src={gatitoSticker} 
                 alt="Gatito" 
-                className="absolute left-2 xs:left-4 sm:left-8 top-0 w-16 xs:w-20 sm:w-24 md:w-28 opacity-0 animate-letter-appear"
+                className="absolute left-2 xs:left-4 sm:left-8 top-0 w-20 xs:w-24 sm:w-28 md:w-32 opacity-0 animate-letter-appear"
                 style={{
                   animationDelay: '0.2s',
                   animationFillMode: 'forwards',
@@ -267,7 +267,7 @@ export default function App() {
               <img 
                 src={huskiSticker} 
                 alt="Huski" 
-                className="absolute right-2 xs:right-4 sm:right-8 top-0 w-16 xs:w-20 sm:w-24 md:w-28 opacity-0 animate-letter-appear"
+                className="absolute right-2 xs:right-4 sm:right-8 top-0 w-20 xs:w-24 sm:w-28 md:w-32 opacity-0 animate-letter-appear"
                 style={{
                   animationDelay: '0.4s',
                   animationFillMode: 'forwards',
@@ -336,7 +336,7 @@ export default function App() {
               <img 
                 src={chihuahuaSticker} 
                 alt="Chihuahua" 
-                className="w-14 xs:w-16 sm:w-20 md:w-24 opacity-0 animate-letter-appear"
+                className="w-16 xs:w-20 sm:w-24 md:w-28 opacity-0 animate-letter-appear"
                 style={{
                   animationDelay: '4s',
                   animationFillMode: 'forwards',
@@ -473,7 +473,7 @@ export default function App() {
                           <img 
                             src={gatitoSticker} 
                             alt="Gatito" 
-                            className="w-12 xs:w-14 sm:w-16 md:w-20 animate-signature-bounce"
+                            className="w-14 xs:w-16 sm:w-20 md:w-24 animate-signature-bounce"
                             style={{
                               filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
                               animationDelay: '1s'
@@ -484,7 +484,7 @@ export default function App() {
                             <img 
                               src={huskiSticker} 
                               alt="Huski" 
-                              className="w-12 xs:w-14 sm:w-16 md:w-20 animate-signature-bounce"
+                              className="w-14 xs:w-16 sm:w-20 md:w-24 animate-signature-bounce"
                               style={{
                                 filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
                                 animationDelay: '1.2s'
@@ -493,7 +493,7 @@ export default function App() {
                             <img 
                               src={chihuahuaSticker} 
                               alt="Chihuahua" 
-                              className="w-12 xs:w-14 sm:w-16 md:w-20 animate-signature-bounce"
+                              className="w-14 xs:w-16 sm:w-20 md:w-24 animate-signature-bounce"
                               style={{
                                 filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
                                 animationDelay: '1.4s'
