@@ -255,11 +255,12 @@ export default function App() {
               <img 
                 src={gatitoSticker} 
                 alt="Gatito" 
-                className="absolute left-2 xs:left-4 sm:left-8 top-0 w-20 xs:w-24 sm:w-28 md:w-32 opacity-0 animate-letter-appear"
+                className="absolute left-2 xs:left-4 sm:left-8 top-0 w-24 xs:w-28 sm:w-32 md:w-36 opacity-0 animate-letter-appear heart-border"
                 style={{
                   animationDelay: '0.2s',
                   animationFillMode: 'forwards',
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))',
+                  borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
                 }}
               />
               
@@ -267,11 +268,12 @@ export default function App() {
               <img 
                 src={huskiSticker} 
                 alt="Huski" 
-                className="absolute right-2 xs:right-4 sm:right-8 top-0 w-20 xs:w-24 sm:w-28 md:w-32 opacity-0 animate-letter-appear"
+                className="absolute right-2 xs:right-4 sm:right-8 top-0 w-24 xs:w-28 sm:w-32 md:w-36 opacity-0 animate-letter-appear heart-border"
                 style={{
                   animationDelay: '0.4s',
                   animationFillMode: 'forwards',
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))',
+                  borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
                 }}
               />
               
@@ -336,11 +338,12 @@ export default function App() {
               <img 
                 src={chihuahuaSticker} 
                 alt="Chihuahua" 
-                className="w-16 xs:w-20 sm:w-24 md:w-28 opacity-0 animate-letter-appear"
+                className="w-20 xs:w-24 sm:w-28 md:w-32 opacity-0 animate-letter-appear heart-border"
                 style={{
                   animationDelay: '4s',
                   animationFillMode: 'forwards',
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))',
+                  borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
                 }}
               />
             </div>
@@ -473,10 +476,11 @@ export default function App() {
                           <img 
                             src={gatitoSticker} 
                             alt="Gatito" 
-                            className="w-14 xs:w-16 sm:w-20 md:w-24 animate-signature-bounce"
+                            className="w-16 xs:w-20 sm:w-24 md:w-28 animate-signature-bounce heart-border"
                             style={{
                               filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
-                              animationDelay: '1s'
+                              animationDelay: '1s',
+                              borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
                             }}
                           />
                           <span className="text-white/60 text-xs xs:text-sm font-light">💕</span>
@@ -484,19 +488,21 @@ export default function App() {
                             <img 
                               src={huskiSticker} 
                               alt="Huski" 
-                              className="w-14 xs:w-16 sm:w-20 md:w-24 animate-signature-bounce"
+                              className="w-16 xs:w-20 sm:w-24 md:w-28 animate-signature-bounce heart-border"
                               style={{
                                 filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
-                                animationDelay: '1.2s'
+                                animationDelay: '1.2s',
+                                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
                               }}
                             />
                             <img 
                               src={chihuahuaSticker} 
                               alt="Chihuahua" 
-                              className="w-14 xs:w-16 sm:w-20 md:w-24 animate-signature-bounce"
+                              className="w-16 xs:w-20 sm:w-24 md:w-28 animate-signature-bounce heart-border"
                               style={{
                                 filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
-                                animationDelay: '1.4s'
+                                animationDelay: '1.4s',
+                                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
                               }}
                             />
                           </div>
@@ -904,6 +910,13 @@ export default function App() {
         
         .animate-signature-bounce {
           animation: signature-bounce 3s ease-in-out infinite;
+        }
+        
+        .heart-border {
+          border: 2px solid rgba(255, 182, 193, 0.6);
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 182, 193, 0.05));
+          backdrop-filter: blur(2px);
+          box-shadow: 0 0 15px rgba(255, 182, 193, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
         }
         
         /* Efectos optimizados para móvil ultra responsivo */
