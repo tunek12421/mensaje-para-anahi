@@ -326,7 +326,7 @@ export default function App() {
                          direction: 'ltr',
                          unicodeBidi: 'embed'
                        }}>
-                    <span style={{ display: 'inline-block' }}>Para Anahi</span> ✨
+                    ✨
                   </div>
                 </div>
               )}
