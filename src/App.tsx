@@ -329,18 +329,33 @@ export default function App() {
               Hay algo que quiero decirte...
             </p>
             
-            <button
-              onClick={() => setShowMessage(true)}
-              className="group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 overflow-hidden rounded-full bg-white text-black font-bold text-sm sm:text-base md:text-lg shadow-2xl transform transition-all duration-700 hover:shadow-2xl hover:scale-105 active:scale-95 border-2 border-white/50"
-              style={{
-                transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`,
-                boxShadow: '0 8px 32px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9)'
-              }}
-            >
-              <span className="relative z-10">Continuar</span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div className="absolute -inset-1 bg-white rounded-full opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-500"></div>
-            </button>
+            <div className="flex flex-col items-center gap-4">
+              <button
+                onClick={() => setShowMessage(true)}
+                className="group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 overflow-hidden rounded-full bg-white text-black font-bold text-sm sm:text-base md:text-lg shadow-2xl transform transition-all duration-700 hover:shadow-2xl hover:scale-105 active:scale-95 border-2 border-white/50"
+                style={{
+                  transform: isMobile() ? 'none' : `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`,
+                  boxShadow: isMobile() ? '0 4px 16px rgba(255, 255, 255, 0.3)' : '0 8px 32px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9)',
+                  willChange: isMobile() ? 'auto' : 'transform'
+                }}
+              >
+                <span className="relative z-10">Continuar</span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                <div className="absolute -inset-1 bg-white rounded-full opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-500"></div>
+              </button>
+              
+              {/* Chihuahua debajo del botón */}
+              <img 
+                src={chihuahuaSticker} 
+                alt="Chihuahua" 
+                className="w-12 xs:w-14 sm:w-16 md:w-18 opacity-0 animate-letter-appear"
+                style={{
+                  animationDelay: '4s',
+                  animationFillMode: 'forwards',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                }}
+              />
+            </div>
           </div>
         ) : (
           <div className="relative">
