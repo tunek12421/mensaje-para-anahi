@@ -365,7 +365,7 @@ export default function App() {
                 
                 <div className="relative opacity-0 animate-text-reveal bg-black/80 backdrop-blur-sm rounded-lg xs:rounded-xl p-2 xs:p-3 sm:p-4 shadow-2xl border border-white/30" style={{ animationDelay: '1s' }}>
                   <p>
-                    Llevamos casi un año siendo <span className="font-bold text-yellow-300 bg-black/70 px-2 py-1 rounded-lg border border-yellow-300/30">'algo sin nombre'</span> - exclusivos, cariñosos, conectados.
+                    Llevamos casi un año siendo <span className="font-bold text-yellow-300 bg-black/70 px-1 xs:px-2 py-1 rounded border border-yellow-300/30 whitespace-nowrap">'algo sin nombre'</span> - exclusivos, cariñosos, conectados.
                   </p>
                 </div>
 
