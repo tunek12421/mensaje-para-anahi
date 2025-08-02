@@ -4,7 +4,6 @@ export default function App() {
   const [showMessage, setShowMessage] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [nameRevealed, setNameRevealed] = useState(false);
   const [showFinalQuestion, setShowFinalQuestion] = useState(false);
   const [particles, setParticles] = useState<Array<{
     id: number;
@@ -104,8 +103,6 @@ export default function App() {
         setCurrentLanguage(prev => prev + 1);
       }, 800);
       return () => clearTimeout(timer);
-    } else if (showMessage && currentLanguage === loveWords.length - 1) {
-      setTimeout(() => setNameRevealed(true), 1000);
     }
   }, [showMessage, currentLanguage]);
 
@@ -317,17 +314,6 @@ export default function App() {
                    willChange: isMobile() ? 'auto' : 'transform'
                  }}>
               
-              {/* Nombre revelado con efecto elegante responsivo */}
-              {nameRevealed && (
-                <div className="mb-6 xs:mb-8 sm:mb-10 text-center animate-float-name px-1 xs:px-2">
-                  <div className="inline-block text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-white tracking-wide opacity-90 bg-black/80 backdrop-blur-md rounded-lg px-2 xs:px-3 py-1 xs:py-2 shadow-lg border border-white/30"
-                       style={{ 
-                         textShadow: '0 0 15px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8)'
-                       }}>
-                    ✨
-                  </div>
-                </div>
-              )}
               
               {/* Palabras de amor con diseño minimalista responsivo */}
               <div className="mb-4 xs:mb-6 sm:mb-8 md:mb-10">
