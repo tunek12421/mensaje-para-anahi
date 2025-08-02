@@ -329,7 +329,7 @@ export default function App() {
                   willChange: isMobile() ? 'auto' : 'transform'
                 }}
               >
-                <span className="relative z-10">Continuar</span>
+                <span className="relative z-10">Para Anahi</span>
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                 <div className="absolute -inset-1 bg-white rounded-full opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-500"></div>
               </button>
