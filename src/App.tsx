@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
+import gatitoSticker from './assets/gatito.webp';
+import huskiSticker from './assets/huski.webp';
+import chihuahuaSticker from './assets/chihuahua.webp';
 
 export default function App() {
   const [showMessage, setShowMessage] = useState(false);
@@ -246,11 +249,47 @@ export default function App() {
       <div className="w-full h-full max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl z-10 px-4 py-4 flex flex-col justify-center">
         {!showMessage ? (
           <div className="text-center">
-            {/* Mi Luna Mi Sol */}
-            <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-center">
+            {/* Mi Luna Mi Sol con stickers */}
+            <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-center relative">
+              {/* Gatito (ella) - lado izquierdo */}
+              <img 
+                src={gatitoSticker} 
+                alt="Gatito" 
+                className="absolute left-2 xs:left-4 sm:left-8 top-0 w-14 xs:w-16 sm:w-18 md:w-20 opacity-0 animate-letter-appear"
+                style={{
+                  animationDelay: '0.2s',
+                  animationFillMode: 'forwards',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                }}
+              />
+              
+              {/* Huski y Chihuahua (tú) - lado derecho */}
+              <div className="absolute right-2 xs:right-4 sm:right-8 top-0 flex flex-col gap-1 xs:gap-2">
+                <img 
+                  src={huskiSticker} 
+                  alt="Huski" 
+                  className="w-14 xs:w-16 sm:w-18 md:w-20 opacity-0 animate-letter-appear"
+                  style={{
+                    animationDelay: '0.4s',
+                    animationFillMode: 'forwards',
+                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                  }}
+                />
+                <img 
+                  src={chihuahuaSticker} 
+                  alt="Chihuahua" 
+                  className="w-14 xs:w-16 sm:w-18 md:w-20 opacity-0 animate-letter-appear"
+                  style={{
+                    animationDelay: '0.6s',
+                    animationFillMode: 'forwards',
+                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                  }}
+                />
+              </div>
+              
               <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white opacity-0 animate-letter-appear mb-3 sm:mb-4"
                    style={{
-                     animationDelay: '0.5s',
+                     animationDelay: '0.8s',
                      animationFillMode: 'forwards',
                      textShadow: '0 0 20px rgba(255, 182, 193, 0.8), 0 4px 8px rgba(0, 0, 0, 0.9)'
                    }}>
@@ -259,7 +298,7 @@ export default function App() {
               
               <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white opacity-0 animate-letter-appear"
                    style={{
-                     animationDelay: '1s',
+                     animationDelay: '1.2s',
                      animationFillMode: 'forwards',
                      textShadow: '0 0 20px rgba(255, 228, 181, 0.8), 0 4px 8px rgba(0, 0, 0, 0.9)'
                    }}>
@@ -420,10 +459,45 @@ export default function App() {
                       </p>
                       
                       <div className="mt-4 xs:mt-6 sm:mt-8 pt-3 xs:pt-4 sm:pt-6 border-t border-white/20 relative z-10">
-                        <p className="text-center text-white text-xs xs:text-sm bg-black/60 rounded-lg px-2 xs:px-3 sm:px-4 py-2 xs:py-3 border border-white/20"
+                        <p className="text-center text-white text-xs xs:text-sm bg-black/60 rounded-lg px-2 xs:px-3 sm:px-4 py-2 xs:py-3 border border-white/20 mb-4"
                            style={{ textShadow: '0 0 8px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.8)' }}>
                           Con amor desde Cochabamba 💕
                         </p>
+                        
+                        {/* Stickers como firma personal */}
+                        <div className="flex justify-center items-center gap-3 xs:gap-4 sm:gap-6 mt-4 opacity-0 animate-text-reveal"
+                             style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
+                          <img 
+                            src={gatitoSticker} 
+                            alt="Gatito" 
+                            className="w-10 xs:w-12 sm:w-14 md:w-16 animate-signature-bounce"
+                            style={{
+                              filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
+                              animationDelay: '1s'
+                            }}
+                          />
+                          <span className="text-white/60 text-xs xs:text-sm font-light">💕</span>
+                          <div className="flex gap-1 xs:gap-2">
+                            <img 
+                              src={huskiSticker} 
+                              alt="Huski" 
+                              className="w-10 xs:w-12 sm:w-14 md:w-16 animate-signature-bounce"
+                              style={{
+                                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
+                                animationDelay: '1.2s'
+                              }}
+                            />
+                            <img 
+                              src={chihuahuaSticker} 
+                              alt="Chihuahua" 
+                              className="w-10 xs:w-12 sm:w-14 md:w-16 animate-signature-bounce"
+                              style={{
+                                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
+                                animationDelay: '1.4s'
+                              }}
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -782,6 +856,25 @@ export default function App() {
           }
         }
         
+        @keyframes signature-bounce {
+          0%, 100% {
+            transform: translateY(0) scale(1);
+            filter: brightness(1);
+          }
+          25% {
+            transform: translateY(-3px) scale(1.05);
+            filter: brightness(1.1);
+          }
+          50% {
+            transform: translateY(-1px) scale(1.02);
+            filter: brightness(1.05);
+          }
+          75% {
+            transform: translateY(-2px) scale(1.01);
+            filter: brightness(1.02);
+          }
+        }
+        
         .animate-letter-appear {
           animation: letter-appear 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
@@ -804,6 +897,10 @@ export default function App() {
         
         .animate-float-name {
           animation: float-name 4s ease-in-out infinite, lens-flare 12s ease-in-out infinite;
+        }
+        
+        .animate-signature-bounce {
+          animation: signature-bounce 3s ease-in-out infinite;
         }
         
         /* Efectos optimizados para móvil ultra responsivo */
