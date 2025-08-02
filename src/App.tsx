@@ -263,29 +263,17 @@ export default function App() {
                 }}
               />
               
-              {/* Huski y Chihuahua (tú) - lado derecho */}
-              <div className="absolute right-2 xs:right-4 sm:right-8 top-0 flex flex-col gap-1 xs:gap-2">
-                <img 
-                  src={huskiSticker} 
-                  alt="Huski" 
-                  className="w-14 xs:w-16 sm:w-18 md:w-20 opacity-0 animate-letter-appear"
-                  style={{
-                    animationDelay: '0.4s',
-                    animationFillMode: 'forwards',
-                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
-                  }}
-                />
-                <img 
-                  src={chihuahuaSticker} 
-                  alt="Chihuahua" 
-                  className="w-14 xs:w-16 sm:w-18 md:w-20 opacity-0 animate-letter-appear"
-                  style={{
-                    animationDelay: '0.6s',
-                    animationFillMode: 'forwards',
-                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
-                  }}
-                />
-              </div>
+              {/* Huski (tú) - lado derecho */}
+              <img 
+                src={huskiSticker} 
+                alt="Huski" 
+                className="absolute right-2 xs:right-4 sm:right-8 top-0 w-14 xs:w-16 sm:w-18 md:w-20 opacity-0 animate-letter-appear"
+                style={{
+                  animationDelay: '0.4s',
+                  animationFillMode: 'forwards',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                }}
+              />
               
               <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white opacity-0 animate-letter-appear mb-3 sm:mb-4"
                    style={{
